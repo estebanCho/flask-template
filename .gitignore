@@ -1,0 +1,11 @@
+.idea/
+.idea/*.xml
+*.iws
+
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.env
+
+app/main/config/*.json
