@@ -28,7 +28,7 @@ def log(log_data: dict):
 def alterLog(log_data: dict) -> LogDict:
     """
     log_data
-        event, response, access_token, db, api_response, api_request, error
+        event, response, token, db, api_response, api_request, error
     """
     result = {
         "event": log_data.get("event"),
@@ -36,7 +36,7 @@ def alterLog(log_data: dict) -> LogDict:
             "id": request.headers.get("X-Request-Id"),
             "method": request.method,
             "path": request.path,
-            "authorization": log_data.get("access_token") if "access_token" in log_data else {},
+            "authorization": log_data.get("token") if "token" in log_data else {},
             "body": request.json if request.json else {},
             "query_string": request.query_string.decode()
         }),

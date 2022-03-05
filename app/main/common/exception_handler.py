@@ -20,7 +20,7 @@ def broad_exception_handler(e: Exception):
     error_data = {"event": "error_handler"}
 
     if 'Authorization' in request.headers.keys():
-        error_data['access_token'] = {"token": request.headers['Authorization']}
+        error_data['token'] = {"token": request.headers['Authorization']}
 
     if isinstance(e, HTTPException):
         # @@TODO httpException이 세분화 되어야 한다.
